@@ -4,6 +4,7 @@
     <h1>My Cart</h1>
   </header>
 
+  <%if enhanced_cart.length != 0%>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +49,9 @@
       <% end %>
     </div>
   </div>
-
+  <% else %>
+  <div class="alert alert-info" role="alert">
+  The cart is empty. Please choose an item. Click to go to the: <%= link_to 'Home Page', :root %>
+  </div>
+  <% end %>
 </section>
